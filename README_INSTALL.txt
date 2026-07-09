@@ -14,13 +14,16 @@ INSTALL
 
    ...\Steam\steamapps\common\Crab Champions\CrabChampions\Binaries\Win64
 
-   After extraction, dwmapi.dll and UE4SS.dll must be directly inside Win64.
+   This is a flat drag-and-drop bundle: extract every ZIP entry directly into
+   Win64. After extraction, dwmapi.dll, UE4SS.dll, UE4SS-settings.ini, and
+   imgui.ini must be directly inside Win64.
    Do not extract the ZIP into an extra CrabSyncV2 or release-name folder.
 4. Confirm these files exist:
 
    dwmapi.dll
    UE4SS.dll
    UE4SS-settings.ini
+   imgui.ini
    Mods\mods.txt
    Mods\CrabSyncV2\Scripts\main.lua
    Mods\CrabSyncV2\Scripts\config.txt

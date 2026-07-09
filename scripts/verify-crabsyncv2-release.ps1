@@ -191,6 +191,7 @@ try {
         'dwmapi.dll',
         'UE4SS.dll',
         'UE4SS-settings.ini',
+        'imgui.ini',
         'Mods\mods.txt',
         'Mods\Keybinds\Scripts\main.lua',
         'Mods\shared\UEHelpers\UEHelpers.lua',

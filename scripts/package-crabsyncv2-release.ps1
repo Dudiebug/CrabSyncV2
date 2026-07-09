@@ -176,6 +176,7 @@ $sourceMain = Join-Path $sourceMod 'Scripts\main.lua'
 $sourceConfig = Join-Path $sourceMod 'Scripts\config.txt'
 $sourceEnabledMarker = Join-Path $sourceMod 'enabled.txt'
 $sourceUE4SSSettings = Join-Path $repoRoot 'client\UE4SS-settings.ini'
+$sourceImGuiSettings = Join-Path $repoRoot 'client\imgui.ini'
 $modsTemplate = Join-Path $repoRoot 'packaging\CrabSyncV2-mods.txt'
 $experimentalConfigExample = Join-Path $sourceMod 'Scripts\examples\experimental-full-p2p-sync.txt'
 $installReadme = Join-Path $repoRoot 'README_INSTALL.txt'
@@ -192,6 +193,7 @@ $requiredSources = @(
     $sourceConfig,
     $sourceEnabledMarker,
     $sourceUE4SSSettings,
+    $sourceImGuiSettings,
     $modsTemplate,
     $experimentalConfigExample,
     $installReadme,
@@ -271,6 +273,7 @@ try {
     }
 
     Copy-FileWithParent -Source $sourceUE4SSSettings -Destination (Join-Path $stage 'UE4SS-settings.ini')
+    Copy-FileWithParent -Source $sourceImGuiSettings -Destination (Join-Path $stage 'imgui.ini')
     Copy-SanitizedMod -SourceRoot $sourceMod -DestinationRoot (Join-Path $stage 'Mods\CrabSyncV2')
     Copy-FileWithParent -Source $modsTemplate -Destination (Join-Path $stage 'Mods\mods.txt')
 
