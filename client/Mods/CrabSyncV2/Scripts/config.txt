@@ -1,0 +1,63 @@
+# CrabSyncV2 experimental P2P configuration
+# SAFE DEFAULTS: the mod, transport, deep reads, carrier work, and writes are off.
+
+enableCrabSyncV2 = false
+transportMode = disabled
+pollIntervalMs = 1000
+stableTicksRequired = 5
+maxSnapshotAgeMs = 15000
+maxPeers = 16
+maxInventoryItemsPerCategory = 128
+
+# Read/transport gates
+allowPeerVisibleStateRead = false
+allowCarrierDiscovery = false
+allowCarrierPublish = false
+allowCarrierReceive = false
+allowHealthRead = false
+allowEquipmentRead = false
+allowResourceRead = false
+allowInventoryRead = false
+allowInventoryItemTraversal = false
+allowMetadataRead = false
+allowEnhancementRead = false
+allowDebugLoopbackTransport = false
+
+# Deterministic convergence policies. These compute candidates only; they do not
+# authorize writes. Keys and armor intentionally have no sync policy.
+healthMergePolicy = max_visible
+equipmentMergePolicy = lowest_fingerprint
+crystalMergePolicy = max_visible
+slotMergePolicy = max_visible
+inventoryMergePolicy = preserve_instances
+
+# Apply gates
+allowApply = false
+allowHealthApply = false
+allowEquipmentApply = false
+allowResourceApply = false
+allowInventoryApply = false
+allowMetadataApply = false
+allowEnhancementApply = false
+allowJoinedClientApply = false
+allowMultiplayerApply = false
+hostOnlyApply = true
+dryRunApply = true
+backupBeforeApply = true
+
+# Additional write-path gates. Object-dump presence is not proof of safety.
+allowOfficialFunctionApply = false
+allowRawPropertyWrites = false
+# Reserved evidence gate: this build still blocks identity replacement and
+# array rebuild even when an example sets allowRawInventoryWrites=true.
+allowRawInventoryWrites = false
+allowOnRepInventory = false
+allowOnRepCrystals = false
+allowClientRefreshPSUI = false
+
+# Diagnostics
+debugCrashBreadcrumbs = false
+debugVerboseSnapshots = false
+
+# See Scripts/examples for diagnostics-only, visible-state dry-run, carrier
+# discovery, and experimental host/full-sync configurations.

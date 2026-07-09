@@ -1,0 +1,30 @@
+UE4SS ATTRIBUTION AND SOURCE NOTICE
+===================================
+
+Upstream project: RE-UE4SS (Unreal Engine 4/5 Scripting System)
+Upstream repository: https://github.com/UE4SS-RE/RE-UE4SS
+Release page: https://github.com/UE4SS-RE/RE-UE4SS/releases/tag/v3.0.1
+Pinned end-user asset: UE4SS_v3.0.1.zip
+Asset URL: https://github.com/UE4SS-RE/RE-UE4SS/releases/download/v3.0.1/UE4SS_v3.0.1.zip
+Asset SHA-256: 4B47D4BCEDDD2F561A4E395BFA00924CCFC945AF576A2D0C613E6537846C57EC
+Source tag: v3.0.1
+Source commit: d935b5b23bac03b65c14ae38382b02007204cc2e
+Source tree: https://github.com/UE4SS-RE/RE-UE4SS/tree/v3.0.1
+Source archive: https://github.com/UE4SS-RE/RE-UE4SS/archive/refs/tags/v3.0.1.zip
+License at the pinned source tag:
+https://github.com/UE4SS-RE/RE-UE4SS/blob/v3.0.1/LICENSE
+
+The official GitHub releases endpoint identified v3.0.1 as the latest stable,
+non-prerelease UE4SS release when checked on 2026-07-09. The SHA-256 above was
+computed from the exact official GitHub release asset; GitHub does not publish
+an asset digest for this older release through its release API.
+
+UE4SS is distributed under the MIT License. The complete upstream license text
+is included as UE4SS-LICENSE.txt. CrabSyncV2 is a separate project distributed
+under the license included as LICENSE-CrabSyncV2.txt. This distribution is not
+affiliated with or endorsed by the UE4SS project.
+
+The packager copies only hash-verified, unmodified UE4SS v3.0.1 runtime/loader
+and required helper files. CrabSyncV2, its configuration, the release-specific
+mods.txt, and the conservative UE4SS-settings.ini are downstream additions or
+configuration and are not part of upstream UE4SS.

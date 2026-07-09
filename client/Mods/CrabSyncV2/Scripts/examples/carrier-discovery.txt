@@ -1,0 +1,17 @@
+# Read-only candidate discovery. Publishing and receiving carrier payloads stay off.
+enableCrabSyncV2 = true
+transportMode = p2p_carrier
+allowPeerVisibleStateRead = true
+allowCarrierDiscovery = true
+allowCarrierPublish = false
+allowCarrierReceive = false
+allowHealthRead = true
+allowEquipmentRead = true
+allowResourceRead = true
+allowInventoryRead = false
+allowInventoryItemTraversal = false
+allowMetadataRead = false
+allowEnhancementRead = false
+allowApply = false
+dryRunApply = true
+debugVerboseSnapshots = true

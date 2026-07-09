@@ -1,0 +1,26 @@
+# Game-native visible PlayerState convergence with a complete dry-run plan.
+enableCrabSyncV2 = true
+transportMode = game_visible
+allowPeerVisibleStateRead = true
+allowHealthRead = true
+allowEquipmentRead = true
+allowResourceRead = true
+allowInventoryRead = true
+allowInventoryItemTraversal = false
+allowMetadataRead = false
+allowEnhancementRead = false
+allowApply = true
+allowHealthApply = true
+allowEquipmentApply = true
+allowResourceApply = true
+allowInventoryApply = false
+allowJoinedClientApply = false
+allowMultiplayerApply = true
+hostOnlyApply = true
+dryRunApply = true
+backupBeforeApply = true
+debugVerboseSnapshots = true
+# Diagnostics-only contribution experiment. Do not copy these SUM policies into
+# a live-apply config: applied totals are visible again and can feed back.
+healthMergePolicy = sum_visible
+crystalMergePolicy = sum_visible

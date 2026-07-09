@@ -1,0 +1,14 @@
+# CrabSyncV2 runtime diagnostics and recovery snapshots.
+client/Mods/CrabSyncV2/Scripts/diagnostics_*.jsonl
+client/Mods/CrabSyncV2/Scripts/*.log
+client/Mods/CrabSyncV2/Scripts/backups/*.cs2
+
+# Local game-install copies and diagnostics.
+/MyMods/
+/WORKING COPY HERE/
+/WORKING COPY HERE - Copy/
+/logs to look at/
+
+# Release artifacts.
+*.zip
+/dist/

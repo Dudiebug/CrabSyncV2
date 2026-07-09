@@ -1,0 +1,36 @@
+name: Test CrabSyncV2 core
+
+on:
+  pull_request:
+    paths:
+      - 'client/Mods/CrabSyncV2/**'
+      - 'tests/crabsyncv2_core_test.lua'
+      - '.github/workflows/test-crabsyncv2.yml'
+  push:
+    branches:
+      - master
+      - 'agent/**'
+    paths:
+      - 'client/Mods/CrabSyncV2/**'
+      - 'tests/crabsyncv2_core_test.lua'
+      - '.github/workflows/test-crabsyncv2.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  lua-core:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install Lua 5.4
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes lua5.4
+
+      - name: Run CrabSyncV2 core tests
+        run: lua5.4 tests/crabsyncv2_core_test.lua

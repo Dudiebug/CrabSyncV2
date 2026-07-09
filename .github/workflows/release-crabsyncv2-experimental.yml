@@ -1,0 +1,93 @@
+name: Release CrabSyncV2 experimental ZIP
+
+on:
+  push:
+    tags:
+      - 'v*-experimental'
+
+permissions:
+  contents: write
+
+jobs:
+  lua-core:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out tagged source
+        uses: actions/checkout@v4
+
+      - name: Install Lua 5.4
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes lua5.4
+
+      - name: Run CrabSyncV2 core tests
+        run: lua5.4 tests/crabsyncv2_core_test.lua
+
+  package-and-release:
+    needs: lua-core
+    runs-on: windows-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out tagged source
+        uses: actions/checkout@v4
+
+      - name: Validate experimental tag
+        shell: pwsh
+        run: |
+          if ($env:GITHUB_REF_NAME -notmatch '^v.+-experimental$') {
+            throw "Expected a v*-experimental tag, got: $env:GITHUB_REF_NAME"
+          }
+
+      - name: Build pinned UE4SS CrabSyncV2 ZIP
+        shell: pwsh
+        run: |
+          ./scripts/package-crabsyncv2-release.ps1 `
+            -OutputDirectory ./dist `
+            -Version $env:GITHUB_REF_NAME
+
+      - name: Verify release ZIP
+        shell: pwsh
+        run: |
+          $zips = @(Get-ChildItem -LiteralPath ./dist -Filter '*.zip' -File)
+          if ($zips.Count -ne 1) {
+            throw "Expected exactly one release ZIP, found $($zips.Count)."
+          }
+          ./scripts/verify-crabsyncv2-release.ps1 -ZipPath $zips[0].FullName
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CrabSyncV2-${{ github.ref_name }}-Win64
+          path: dist/*.zip
+          if-no-files-found: error
+
+      - name: Create prerelease and attach ZIP
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $zip = @(Get-ChildItem -LiteralPath ./dist -Filter '*.zip' -File)
+          if ($zip.Count -ne 1) {
+            throw "Expected exactly one release ZIP before publishing."
+          }
+
+          gh release view $env:GITHUB_REF_NAME --repo $env:GITHUB_REPOSITORY *> $null
+          $releaseExists = $LASTEXITCODE -eq 0
+          if ($releaseExists) {
+            gh release upload $env:GITHUB_REF_NAME $zip[0].FullName `
+              --repo $env:GITHUB_REPOSITORY `
+              --clobber
+          } else {
+            gh release create $env:GITHUB_REF_NAME $zip[0].FullName `
+              --repo $env:GITHUB_REPOSITORY `
+              --verify-tag `
+              --prerelease `
+              --title "$env:GITHUB_REF_NAME (CrabSyncV2 experimental)" `
+              --notes-file ./docs/CRABSYNCV2_EXPERIMENTAL_RELEASE_NOTES.md
+          }
+          if ($LASTEXITCODE -ne 0) {
+            throw "GitHub release publish failed with exit code $LASTEXITCODE."
+          }

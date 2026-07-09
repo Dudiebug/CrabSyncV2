@@ -1,0 +1,16 @@
+# Local diagnostics only. No peer transport, carrier work, or writes.
+enableCrabSyncV2 = true
+transportMode = disabled
+allowPeerVisibleStateRead = false
+allowHealthRead = true
+allowEquipmentRead = true
+allowResourceRead = true
+allowInventoryRead = true
+allowInventoryItemTraversal = false
+allowMetadataRead = false
+allowEnhancementRead = false
+allowCarrierDiscovery = false
+allowApply = false
+dryRunApply = true
+backupBeforeApply = true
+debugVerboseSnapshots = true

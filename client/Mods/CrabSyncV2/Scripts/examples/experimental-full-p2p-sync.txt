@@ -1,0 +1,38 @@
+# DANGEROUS PRIVATE HOST TEST. Not production-safe; back up the save/run first.
+# A usable CrabSyncBlock carrier is not proven, so this uses game-visible state.
+enableCrabSyncV2 = true
+transportMode = game_visible
+allowPeerVisibleStateRead = true
+allowCarrierDiscovery = true
+allowCarrierPublish = false
+allowCarrierReceive = false
+allowHealthRead = true
+allowEquipmentRead = true
+allowResourceRead = true
+allowInventoryRead = true
+allowInventoryItemTraversal = true
+allowMetadataRead = true
+allowEnhancementRead = true
+allowApply = true
+allowHealthApply = true
+allowEquipmentApply = true
+allowResourceApply = true
+allowInventoryApply = true
+allowMetadataApply = true
+allowEnhancementApply = true
+allowJoinedClientApply = false
+allowMultiplayerApply = true
+hostOnlyApply = true
+dryRunApply = false
+backupBeforeApply = true
+allowOfficialFunctionApply = true
+allowRawPropertyWrites = true
+# Reserved evidence intent; identity replacement/array rebuild remain blocked.
+allowRawInventoryWrites = true
+allowOnRepInventory = false
+allowOnRepCrystals = false
+allowClientRefreshPSUI = false
+debugCrashBreadcrumbs = true
+debugVerboseSnapshots = true
+healthMergePolicy = max_visible
+crystalMergePolicy = max_visible

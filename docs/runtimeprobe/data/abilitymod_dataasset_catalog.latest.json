@@ -1,0 +1,237 @@
+{
+  "generatedAt": "2026-05-06T23:53:27.725Z",
+  "familyId": "abilitymod",
+  "title": "Ability Mod DataAsset Catalog",
+  "sourceSessionId": "",
+  "sourceCommit": "",
+  "sourceFiles": [
+    "evidence/runtime/20260505T063937Z/access_evidence.jsonl",
+    "evidence/runtime/20260505T072250Z/access_evidence.jsonl",
+    "evidence/runtime/20260505T204615Z/access_evidence.jsonl",
+    "evidence/runtime/20260505T225501Z/access_evidence.jsonl",
+    "evidence/runtime/20260505T235245Z/access_evidence.jsonl",
+    "evidence/runtime/20260506T003518Z/access_evidence.jsonl",
+    "evidence/runtime/20260506T004503Z/access_evidence.jsonl",
+    "evidence/runtime/20260506T021129Z/access_evidence.jsonl",
+    "evidence/runtime/20260506T021452Z/access_evidence.jsonl",
+    "evidence/runtime/20260506T032658Z/access_evidence.jsonl",
+    "evidence/runtime/20260506T052733Z/access_evidence.jsonl"
+  ],
+  "knownModel": {
+    "playerStateArrayProperty": "CrabPS.AbilityMods",
+    "wrapperClass": "CrabAbilityMod",
+    "dataAssetProperty": "CrabAbilityMod.AbilityModDA",
+    "slotScalarProperty": "CrabPS.NumAbilityModSlots"
+  },
+  "catalogSummary": {
+    "status": "no-imported-catalog-snapshot",
+    "importedCatalogSnapshotFound": false,
+    "candidateCount": 0,
+    "entryCount": 0,
+    "rejectedCount": 0,
+    "knownEntryCount": 0,
+    "fieldCountAttemptedPerEntry": 0,
+    "objectdumpSignals": [
+      "CrabPS.AbilityMods",
+      "CrabPS.NumAbilityModSlots",
+      "CrabAbilityMod",
+      "CrabAbilityMod.AbilityModDA"
+    ],
+    "relatedRuntimeEvidenceSessions": [
+      "20260505T063937Z",
+      "20260505T072250Z",
+      "20260505T204615Z",
+      "20260505T225501Z",
+      "20260505T235245Z",
+      "20260506T003518Z",
+      "20260506T004503Z",
+      "20260506T021129Z",
+      "20260506T021452Z",
+      "20260506T032658Z",
+      "20260506T052733Z"
+    ],
+    "relatedRuntimeEvidenceKinds": [
+      "ResourceVisibility.PlayerState.Sample",
+      "ResourceVisibility.Health.Sample",
+      "ResourceVisibility.Resources.Sample",
+      "ResourceVisibility.Slots.Sample",
+      "ResourceVisibility.Equipment.Sample",
+      "ResourceVisibility.InventoryArrays.ShallowSample",
+      "Inventory.LocalSlots.Sample",
+      "Inventory.LocalArrays.Shape",
+      "Inventory.LocalArrays.CountOnly",
+      "Inventory.LocalArrays.ShapeConfirm",
+      "Inventory.LocalArrays.UserdataIntrospection",
+      "Resource.Slots.Read",
+      "SafeWatch.Scalar.Sample",
+      "MaxSafePlay.Scalar.Sample",
+      "MaxSafePlay.Session.Heartbeat",
+      "MaxSafePlay.Session.Summary",
+      "Inventory.LocalArrays.CountRead"
+    ],
+    "relatedRuntimeEvidenceRows": [
+      {
+        "sessionId": "20260505T063937Z",
+        "probeName": "ResourceVisibility.Equipment.Sample",
+        "result": "ok",
+        "runtimeStatus": "SAFE",
+        "valueSummary": "category=equipment visiblePlayerCount=4 sampledPlayerStateCount=4 readableCrystals=4 readableSlots=4 readableEquipment=4 readableInventoryArrayCounts=0 class=partial rawIdentityEvidence=false",
+        "sourceFile": "evidence/runtime/20260505T063937Z/access_evidence.jsonl",
+        "sourceLine": 5
+      },
+      {
+        "sessionId": "20260505T063937Z",
+        "probeName": "ResourceVisibility.Health.Sample",
+        "result": "ok",
+        "runtimeStatus": "SAFE",
+        "valueSummary": "category=health visiblePlayerCount=4 sampledPlayerStateCount=4 readableCrystals=4 readableSlots=4 readableEquipment=4 readableInventoryArrayCounts=0 class=partial rawIdentityEvidence=false",
+        "sourceFile": "evidence/runtime/20260505T063937Z/access_evidence.jsonl",
+        "sourceLine": 2
+      },
+      {
+        "sessionId": "20260505T063937Z",
+        "probeName": "ResourceVisibility.InventoryArrays.ShallowSample",
+        "result": "nil",
+        "runtimeStatus": "RETURNS_NIL",
+        "valueSummary": "category=inventory-arrays visiblePlayerCount=4 sampledPlayerStateCount=4 readableCrystals=4 readableSlots=4 readableEquipment=4 readableInventoryArrayCounts=0 class=partial rawIdentityEvidence=false",
+        "sourceFile": "evidence/runtime/20260505T063937Z/access_evidence.jsonl",
+        "sourceLine": 6
+      },
+      {
+        "sessionId": "20260505T063937Z",
+        "probeName": "ResourceVisibility.PlayerState.Sample",
+        "result": "ok",
+        "runtimeStatus": "SAFE",
+        "valueSummary": "visiblePlayerCount=4 sampledPlayerStateCount=4 cap=16 sourcePath=FindAllOf(PlayerState,CrabPS)+FindAllOf(PlayerController,CrabPC).PlayerState displayFingerprints=0c9aa55d:len25,07d91e39:len25,288bc6e7:len25,46bfd184:len25 idFingerprints=26ee3c45:len31,6d1154b5:len31,d908de3d:len31,6a1a18d6:len31 displaySources=PlayerName idSources=UniqueId rawIdentityEvidence=false",
+        "sourceFile": "evidence/runtime/20260505T063937Z/access_evidence.jsonl",
+        "sourceLine": 1
+      },
+      {
+        "sessionId": "20260505T063937Z",
+        "probeName": "ResourceVisibility.Resources.Sample",
+        "result": "ok",
+        "runtimeStatus": "SAFE",
+        "valueSummary": "category=resources visiblePlayerCount=4 sampledPlayerStateCount=4 readableCrystals=4 readableSlots=4 readableEquipment=4 readableInventoryArrayCounts=0 class=partial rawIdentityEvidence=false",
+        "sourceFile": "evidence/runtime/20260505T063937Z/access_evidence.jsonl",
+        "sourceLine": 3
+      },
+      {
+        "sessionId": "20260505T063937Z",
+        "probeName": "ResourceVisibility.Slots.Sample",
+        "result": "ok",
+        "runtimeStatus": "SAFE",
+        "valueSummary": "category=slots visiblePlayerCount=4 sampledPlayerStateCount=4 readableCrystals=4 readableSlots=4 readableEquipment=4 readableInventoryArrayCounts=0 class=partial rawIdentityEvidence=false",
+        "sourceFile": "evidence/runtime/20260505T063937Z/access_evidence.jsonl",
+        "sourceLine": 4
+      },
+      {
+        "sessionId": "20260505T072250Z",
+        "probeName": "Inventory.LocalArrays.CountOnly",
+        "result": "ok",
+        "runtimeStatus": "SAFE",
+        "valueSummary": "category=array-count-only localPlayerStatePresent=true fieldsReadable=5 fieldsNilOrUnsupported=0 countCap=64 noElementDereference=true",
+        "sourceFile": "evidence/runtime/20260505T072250Z/access_evidence.jsonl",
+        "sourceLine": 3
+      },
+      {
+        "sessionId": "20260505T072250Z",
+        "probeName": "Inventory.LocalArrays.Shape",
+        "result": "ok",
+        "runtimeStatus": "SAFE",
+        "valueSummary": "category=array-shape localPlayerStatePresent=true fieldsReadable=5 fieldsNilOrUnsupported=0 countCap=64 noElementDereference=true",
+        "sourceFile": "evidence/runtime/20260505T072250Z/access_evidence.jsonl",
+        "sourceLine": 2
+      },
+      {
+        "sessionId": "20260505T072250Z",
+        "probeName": "Inventory.LocalSlots.Sample",
+        "result": "ok",
+        "runtimeStatus": "SAFE",
+        "valueSummary": "category=slots localPlayerStatePresent=true fieldsReadable=5 fieldsNilOrUnsupported=0 countCap=64 noElementDereference=true",
+        "sourceFile": "evidence/runtime/20260505T072250Z/access_evidence.jsonl",
+        "sourceLine": 1
+      },
+      {
+        "sessionId": "20260505T204615Z",
+        "probeName": "Inventory.LocalArrays.ShapeConfirm",
+        "result": "ok",
+        "runtimeStatus": "SAFE",
+        "valueSummary": "category=shape-confirm localPlayerStatePresent=true fieldsReadable=5 fieldsNilOrUnsupported=0 noArrayCount=true noArrayTraversal=true noElementDereference=true crashAttributionMarker=shape-confirm",
+        "sourceFile": "evidence/runtime/20260505T204615Z/access_evidence.jsonl",
+        "sourceLine": 1
+      },
+      {
+        "sessionId": "20260505T225501Z",
+        "probeName": "Inventory.LocalArrays.UserdataIntrospection",
+        "result": "ok",
+        "runtimeStatus": "SAFE",
+        "valueSummary": "category=userdata-introspection localPlayerStatePresent=true fieldsReadable=5 fieldsNilOrUnsupported=0 lenOperatorAttempted=true noArrayTraversal=true noElementDereference=true noInventoryInfo=true noEnhancements=true crashAttributionMarker=userdata-introspection",
+        "sourceFile": "evidence/runtime/20260505T225501Z/access_evidence.jsonl",
+        "sourceLine": 1
+      },
+      {
+        "sessionId": "20260505T235245Z",
+        "probeName": "Resource.Slots.Read",
+        "result": "ok",
+        "runtimeStatus": "SAFE",
+        "valueSummary": "category=slots-read localPlayerStatePresent=true slotsReadAttempted=true fieldsReadable=4 fieldsNilOrUnsupported=0 lockedSlotModel=unresolved noArrayCount=true noArrayTraversal=true noElementDereference=true noInventoryInfo=true noEnhancements=true noWrites=true noRpcs=true noHud=true noDeepArrays=true crashAttributionMarker=slots-read",
+        "sourceFile": "evidence/runtime/20260505T235245Z/access_evidence.jsonl",
+        "sourceLine": 1
+      },
+      {
+        "sessionId": "20260506T004503Z",
+        "probeName": "SafeWatch.Scalar.Sample",
+        "result": "ok",
+        "runtimeStatus": "SAFE",
+        "valueSummary": "category=safe-scalar-watch sampleCount=119 loggedCount=87 reason=heartbeat playerStatePresent=true changed=false changedFields=none slotModel=observed scalar slot counters / candidate unlocked or usable slot counters; locked/max/total unresolved noArrayCount=true noArrayTraversal=true noElementDereference=true noInventoryInfo=true noEnhancements=true noWrites=true noRpcs=true noHud=true noDeepArrays=true crashAttributionMarker=safe-scalar-watch",
+        "sourceFile": "evidence/runtime/20260506T004503Z/access_evidence.jsonl",
+        "sourceLine": 87
+      },
+      {
+        "sessionId": "20260506T032658Z",
+        "probeName": "MaxSafePlay.Scalar.Sample",
+        "result": "ok",
+        "runtimeStatus": "SAFE",
+        "valueSummary": "category=max-safe-play-recorder scalar sampleCount=2 loggedCount=2 reason=changed playerStatePresent=true changed=true changedFields=WeaponDA noWrites=true noRpcs=true noHud=true noDeepArrays=true noInventoryArrays=true noArrayCount=true noArrayTraversal=true noElementDereference=true noInventoryInfo=true noEnhancements=true noDataAssetMutation=true noFunctionCalls=true passiveOnly=true crashAttributionMarker=max-safe-play-recorder",
+        "sourceFile": "evidence/runtime/20260506T032658Z/access_evidence.jsonl",
+        "sourceLine": 5
+      },
+      {
+        "sessionId": "20260506T032658Z",
+        "probeName": "MaxSafePlay.Session.Heartbeat",
+        "result": "ok",
+        "runtimeStatus": "SAFE",
+        "valueSummary": "category=max-safe-play-recorder heartbeat scalarSamples=1 scalarLogged=1 catalogSnapshots=1 catalogKnownEntries=64 catalogRejected=0 catalogTopRejectionReasons=none changedFields=none passiveOnly=true",
+        "sourceFile": "evidence/runtime/20260506T032658Z/access_evidence.jsonl",
+        "sourceLine": 3
+      },
+      {
+        "sessionId": "20260506T032658Z",
+        "probeName": "MaxSafePlay.Session.Summary",
+        "result": "ok",
+        "runtimeStatus": "SAFE",
+        "valueSummary": "category=max-safe-play-recorder summary scalarSamples=1 scalarLogged=1 catalogSnapshots=1 catalogKnownEntries=64 catalogRejected=0 catalogTopRejectionReasons=none nilCount=0 errorCount=0 passiveOnly=true",
+        "sourceFile": "evidence/runtime/20260506T032658Z/access_evidence.jsonl",
+        "sourceLine": 4
+      },
+      {
+        "sessionId": "20260506T052733Z",
+        "probeName": "Inventory.LocalArrays.CountRead",
+        "result": "ok",
+        "runtimeStatus": "SAFE",
+        "valueSummary": "category=inventory-array-count-read localPlayerStatePresent=true fieldsReadable=5 fieldsNilOrUnsupported=0 countResultFields=5 countMethod=lua_len_operator_pcall noInventoryTraversal=true noArrayTraversal=true noElementDereference=true noItemDataAssetRead=true noInventoryInfo=true noEnhancements=true noWrites=true noRpcs=true noHud=true noDeepArrays=true noDataAssetMutation=true passiveOnly=true crashAttributionMarker=inventory-array-count-read",
+        "sourceFile": "evidence/runtime/20260506T052733Z/access_evidence.jsonl",
+        "sourceLine": 1
+      }
+    ],
+    "campaignPhase": {
+      "phaseId": "abilitymod-da-catalog-read",
+      "label": "Ability mod DataAsset catalog placeholder",
+      "implemented": false,
+      "blockedReason": "Future DataAsset catalog phase; implement after perk catalog evidence and safety review."
+    },
+    "selectionReason": "No imported read-only catalog snapshot has been selected yet for Ability Mod DataAsset Catalog. Current outputs document only related objectdump/shallow runtime evidence and the campaign placeholder phase.",
+    "readOnlyNotice": "RuntimeProbe catalog evidence is read-only and is not permission to mutate DataAssets."
+  },
+  "entries": []
+}
