@@ -179,10 +179,6 @@ $sourceUE4SSSettings = Join-Path $repoRoot 'client\UE4SS-settings.ini'
 $sourceImGuiSettings = Join-Path $repoRoot 'client\imgui.ini'
 $modsTemplate = Join-Path $repoRoot 'packaging\CrabSyncV2-mods.txt'
 $experimentalConfigExample = Join-Path $sourceMod 'Scripts\examples\experimental-full-p2p-sync.txt'
-$installReadme = Join-Path $repoRoot 'README_INSTALL.txt'
-$experimentalReadme = Join-Path $repoRoot 'README_EXPERIMENTAL_FULL_SYNC.txt'
-$manualChecklist = Join-Path $repoRoot 'docs\CRABSYNCV2_MANUAL_TEST_CHECKLIST.md'
-$implementationGuide = Join-Path $repoRoot 'docs\CRABSYNCV2_EXPERIMENTAL_P2P_IMPLEMENTATION.md'
 $modLicense = Join-Path $repoRoot 'LICENSE'
 $ue4ssLicense = Join-Path $repoRoot 'UE4SS-LICENSE.txt'
 $ue4ssAttribution = Join-Path $repoRoot 'UE4SS-ATTRIBUTION.txt'
@@ -196,10 +192,6 @@ $requiredSources = @(
     $sourceImGuiSettings,
     $modsTemplate,
     $experimentalConfigExample,
-    $installReadme,
-    $experimentalReadme,
-    $manualChecklist,
-    $implementationGuide,
     $modLicense,
     $ue4ssLicense,
     $ue4ssAttribution,
@@ -277,10 +269,6 @@ try {
     Copy-SanitizedMod -SourceRoot $sourceMod -DestinationRoot (Join-Path $stage 'Mods\CrabSyncV2')
     Copy-FileWithParent -Source $modsTemplate -Destination (Join-Path $stage 'Mods\mods.txt')
 
-    Copy-FileWithParent -Source $installReadme -Destination (Join-Path $stage 'README_INSTALL.txt')
-    Copy-FileWithParent -Source $experimentalReadme -Destination (Join-Path $stage 'README_EXPERIMENTAL_FULL_SYNC.txt')
-    Copy-FileWithParent -Source $manualChecklist -Destination (Join-Path $stage 'CRABSYNCV2_MANUAL_TEST_CHECKLIST.md')
-    Copy-FileWithParent -Source $implementationGuide -Destination (Join-Path $stage 'CRABSYNCV2_EXPERIMENTAL_P2P_IMPLEMENTATION.md')
     Copy-FileWithParent -Source $modLicense -Destination (Join-Path $stage 'LICENSE-CrabSyncV2.txt')
     Copy-FileWithParent -Source $ue4ssLicense -Destination (Join-Path $stage 'UE4SS-LICENSE.txt')
     Copy-FileWithParent -Source $ue4ssAttribution -Destination (Join-Path $stage 'UE4SS-ATTRIBUTION.txt')

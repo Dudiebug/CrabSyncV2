@@ -164,6 +164,7 @@ try {
         if ($name -match '(^|/)(server|node_modules)(/|$)' -or
             $name -match '(^|/)bridge\.ps1$' -or
             $name -match '(^|/)(push|recv)[^/]*\.json$' -or
+            (($name -match '(^|/)(?:README(?:_[^/]*)?\.txt|CRABSYNCV2_.*\.md)$') -and -not $isBackupDirectoryMarker) -or
             (($name -match '(^|/)(backups|logs)/') -and -not $isBackupDirectoryMarker) -or
             $name -match '\.(?:log|jsonl)$' -or
             $name -match '(^|/)autolaunch\.vbs$') {
@@ -203,10 +204,6 @@ try {
         'Mods\CrabSyncV2\Scripts\examples\carrier-discovery.txt',
         'Mods\CrabSyncV2\Scripts\examples\experimental-full-p2p-sync.txt',
         'Mods\CrabSyncV2\Scripts\backups\README.txt',
-        'README_INSTALL.txt',
-        'README_EXPERIMENTAL_FULL_SYNC.txt',
-        'CRABSYNCV2_MANUAL_TEST_CHECKLIST.md',
-        'CRABSYNCV2_EXPERIMENTAL_P2P_IMPLEMENTATION.md',
         'LICENSE-CrabSyncV2.txt',
         'UE4SS-LICENSE.txt',
         'UE4SS-ATTRIBUTION.txt',
@@ -350,14 +347,6 @@ try {
             Add-Failure "Competing inventory-sync mod enabled: $($competing.Name -join ', ')"
         }
     }
-
-    $installPath = Join-Path $extractRoot 'README_INSTALL.txt'
-    Test-TextPattern -Path $installPath -Pattern 'CrabChampions\\Binaries\\Win64' -Label 'direct Win64 install path'
-    Test-TextPattern -Path $installPath -Pattern 'legacy CrabInventorySync relay server or PowerShell bridge' -Label 'standalone V2 install statement'
-    $riskReadmePath = Join-Path $extractRoot 'README_EXPERIMENTAL_FULL_SYNC.txt'
-    Test-TextPattern -Path $riskReadmePath -Pattern '^game_visible\s*$' -Label 'game_visible transport documentation'
-    Test-TextPattern -Path $riskReadmePath -Pattern '^p2p_carrier\s*$' -Label 'p2p_carrier transport documentation'
-    Test-TextPattern -Path $riskReadmePath -Pattern 'No safe replicated carrier is currently approved' -Label 'unproven carrier warning'
 
     $modLicensePath = Join-Path $extractRoot 'LICENSE-CrabSyncV2.txt'
     Test-TextPattern -Path $modLicensePath -Pattern '^MIT License\s*$' -Label 'CrabSyncV2 MIT license'
