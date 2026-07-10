@@ -1,7 +1,8 @@
 # CrabSyncV2 experimental P2P configuration
-# SAFE DEFAULTS: the mod, transport, deep reads, carrier work, and writes are off.
+# SAFE DIAGNOSTICS DEFAULT: local shallow reads are on; transport, deep reads,
+# carrier work, and every write/apply path remain off.
 
-enableCrabSyncV2 = false
+enableCrabSyncV2 = true
 transportMode = disabled
 pollIntervalMs = 1000
 stableTicksRequired = 5
@@ -14,10 +15,10 @@ allowPeerVisibleStateRead = false
 allowCarrierDiscovery = false
 allowCarrierPublish = false
 allowCarrierReceive = false
-allowHealthRead = false
-allowEquipmentRead = false
-allowResourceRead = false
-allowInventoryRead = false
+allowHealthRead = true
+allowEquipmentRead = true
+allowResourceRead = true
+allowInventoryRead = true
 allowInventoryItemTraversal = false
 allowMetadataRead = false
 allowEnhancementRead = false
@@ -57,7 +58,7 @@ allowClientRefreshPSUI = false
 
 # Diagnostics
 debugCrashBreadcrumbs = false
-debugVerboseSnapshots = false
+debugVerboseSnapshots = true
 
 # See Scripts/examples for diagnostics-only, visible-state dry-run, carrier
 # discovery, and experimental host/full-sync configurations.

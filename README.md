@@ -2,7 +2,7 @@
 
 CrabSyncV2 is an **experimental, CrabSyncV2-only** UE4SS mod for private Crab Champions testing. It is P2P/game-native first: it observes game-replicated state and contains an experimental carrier research path. It does **not** use the legacy relay/server, PowerShell bridge, `push_*.json` or `recv_*.json` IPC, room codes, or `crab.dudiebug.net`.
 
-The shipped configuration is disabled and non-mutating by default. This is not a claim that every read, transport, or write path is safe. Back up saves before any test and use only private sessions.
+The shipped configuration enables local diagnostics only. Peer transport, deep reads, and every apply/write path remain disabled. This is not a claim that every read, transport, or write path is safe. Back up saves before any test and use only private sessions.
 
 ## Status
 

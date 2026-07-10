@@ -15,16 +15,16 @@ $pinnedFiles = [ordered]@{
 }
 
 $safeConfig = [ordered]@{
-    'enableCrabSyncV2'              = 'false'
+    'enableCrabSyncV2'              = 'true'
     'transportMode'                 = 'disabled'
     'allowPeerVisibleStateRead'     = 'false'
     'allowCarrierDiscovery'         = 'false'
     'allowCarrierPublish'           = 'false'
     'allowCarrierReceive'           = 'false'
-    'allowHealthRead'               = 'false'
-    'allowEquipmentRead'            = 'false'
-    'allowResourceRead'             = 'false'
-    'allowInventoryRead'            = 'false'
+    'allowHealthRead'               = 'true'
+    'allowEquipmentRead'            = 'true'
+    'allowResourceRead'             = 'true'
+    'allowInventoryRead'            = 'true'
     'allowInventoryItemTraversal'   = 'false'
     'allowMetadataRead'             = 'false'
     'allowEnhancementRead'          = 'false'
@@ -48,7 +48,7 @@ $safeConfig = [ordered]@{
     'allowOnRepCrystals'            = 'false'
     'allowClientRefreshPSUI'        = 'false'
     'debugCrashBreadcrumbs'         = 'false'
-    'debugVerboseSnapshots'         = 'false'
+    'debugVerboseSnapshots'         = 'true'
 }
 
 $failures = [System.Collections.Generic.List[string]]::new()
